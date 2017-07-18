@@ -3,31 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Chapter03;
-
-import Chapter03.Components.PEe3_17HouseComponent;
-import javax.swing.JFrame;
+package Chapter04;
 
 /**
  *
  * @author chris
  */
-public class PEe3_17 {
+public class PEe4_02 {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame f = new JFrame("Circle");
         
-        f.setSize(500,400);
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        final double MM = 25.4; //millimeter per inch
         
-        PEe3_17HouseComponent house = new PEe3_17HouseComponent();
+        //display a dimensions of a letter-size (8.5 x 11 inches)
         
-        f.add(house);
+        System.out.printf("Dimension of a letter-size Sheet %.4f\n" ,8.5  * (11 * MM));
         
-        f.setVisible(true);
     }
     
 }

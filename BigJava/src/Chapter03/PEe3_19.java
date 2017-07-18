@@ -5,14 +5,14 @@
  */
 package Chapter03;
 
-import Chapter03.Components.PEe3_17HouseComponent;
+import Chapter03.Components.PEe3_19CarModelComponent;
 import javax.swing.JFrame;
 
 /**
  *
  * @author chris
  */
-public class PEe3_17 {
+public class PEe3_19 {
 
     /**
      * @param args the command line arguments
@@ -23,9 +23,9 @@ public class PEe3_17 {
         f.setSize(500,400);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        PEe3_17HouseComponent house = new PEe3_17HouseComponent();
+        PEe3_19CarModelComponent carComponent = new PEe3_19CarModelComponent();
         
-        f.add(house);
+        f.add(carComponent);
         
         f.setVisible(true);
     }

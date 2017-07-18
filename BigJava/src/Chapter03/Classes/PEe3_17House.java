@@ -19,54 +19,61 @@ import java.awt.geom.Point2D;
  * @author chris
  */
 public class PEe3_17House {
-    private int xLength;
-    private int yLength;
+    private int xPos;
+    private int yPos;
+    private int xLen;
+    private int yHei;
     
-    public PEe3_17House(int x, int y){
-        xLength = x;
-        yLength = y;
+    public PEe3_17House(){
+        
+    }
+    
+    public PEe3_17House(int x, int y, int width, int height){
+        xPos = x;
+        yPos = y;
+        xLen = width;
+        yHei = height;
     }
     
     public void draw(Graphics2D g2){
         
         //roof points
-        Point2D.Double p1 = new Point2D.Double(xLength * 0.1 , 0); // top left point
-        Point2D.Double p2 = new Point2D.Double(0 , yLength * 0.2);  //left bottom point
-        Point2D.Double p3 = new Point2D.Double(xLength - (xLength * 0.1) , 0); 
-        Point2D.Double p4 = new Point2D.Double(xLength, yLength * 0.2);
+        Point2D.Double p1 = new Point2D.Double(xPos + (xLen * 0.1 ),yPos + 0); // top left point
+        Point2D.Double p2 = new Point2D.Double(xPos + 0 , yPos + (yHei * 0.2) );  //left bottom point
+        Point2D.Double p3 = new Point2D.Double(xPos + (xLen - (xLen * 0.1) ), yPos + 0);  //bot right
+        Point2D.Double p4 = new Point2D.Double(xPos + (xLen), yPos + ( yHei * 0.2) ); // bot left
         
         //roof point connect
         Line2D.Double l1 = new Line2D.Double(p1, p2);
-        Line2D.Double l2 = new Line2D.Double(p2,p4);
-        Line2D.Double l3 = new Line2D.Double(p1,p3);
-        Line2D.Double l4 = new Line2D.Double(p3,p4);
+        Line2D.Double l2 = new Line2D.Double(p2, p4);
+        Line2D.Double l3 = new Line2D.Double(p1, p3);
+        Line2D.Double l4 = new Line2D.Double(p3, p4);
         
         
         //wall
-        Rectangle.Double body = new Rectangle.Double(xLength * 0.1, yLength * 0.2, xLength * 0.8, yLength*0.9);
+        Rectangle.Double body = new Rectangle.Double(xPos + (xLen * 0.1) , yPos + (yHei * 0.2) , xLen * 0.8 , yHei * 0.9 );
         
         //window
+        Rectangle.Double window11 = new Rectangle.Double(xPos + (xLen * 0.15), yPos + (yHei * 0.3), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window12 = new Rectangle.Double(xPos + (xLen * 0.35), yPos + (yHei * 0.3), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window13 = new Rectangle.Double(xPos + (xLen * 0.55), yPos + (yHei * 0.3), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window14 = new Rectangle.Double(xPos + (xLen * 0.75), yPos + (yHei * 0.3), xLen * 0.1, yHei * 0.1);
         
-        Rectangle.Double window11 = new Rectangle.Double(xLength * 0.15, yLength * 0.3, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window12 = new Rectangle.Double(xLength * 0.35, yLength * 0.3, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window13 = new Rectangle.Double(xLength * 0.55, yLength * 0.3, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window14 = new Rectangle.Double(xLength * 0.75, yLength * 0.3, xLength * 0.1, yLength * 0.1);
+        Rectangle.Double window21 = new Rectangle.Double(xPos + (xLen * 0.15), yPos + (yHei * 0.5), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window22 = new Rectangle.Double(xPos + (xLen * 0.35), yPos + (yHei * 0.5), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window23 = new Rectangle.Double(xPos + (xLen * 0.55), yPos + (yHei * 0.5), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window24 = new Rectangle.Double(xPos + (xLen * 0.75), yPos + (yHei * 0.5), xLen * 0.1, yHei * 0.1);
         
-        Rectangle.Double window21 = new Rectangle.Double(xLength * 0.15, yLength * 0.5, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window22 = new Rectangle.Double(xLength * 0.35, yLength * 0.5, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window23 = new Rectangle.Double(xLength * 0.55, yLength * 0.5, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window24 = new Rectangle.Double(xLength * 0.75, yLength * 0.5, xLength * 0.1, yLength * 0.1);
-        
-        Rectangle.Double window31 = new Rectangle.Double(xLength * 0.15, yLength * 0.7, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window32 = new Rectangle.Double(xLength * 0.35, yLength * 0.7, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window33 = new Rectangle.Double(xLength * 0.55, yLength * 0.7, xLength * 0.1, yLength * 0.1);
-        Rectangle.Double window34 = new Rectangle.Double(xLength * 0.75, yLength * 0.7, xLength * 0.1, yLength * 0.1);
+        Rectangle.Double window31 = new Rectangle.Double(xPos + (xLen * 0.15), yPos + (yHei * 0.7), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window32 = new Rectangle.Double(xPos + (xLen * 0.35), yPos + (yHei * 0.7), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window33 = new Rectangle.Double(xPos + (xLen * 0.55), yPos + (yHei * 0.7), xLen * 0.1, yHei * 0.1);
+        Rectangle.Double window34 = new Rectangle.Double(xPos + (xLen * 0.75), yPos + (yHei * 0.7), xLen * 0.1, yHei * 0.1);
         
         //door
-        Rectangle.Double door1 = new Rectangle.Double(xLength * 0.35, yLength * 0.85, xLength * 0.3, yLength *0.12);
-        Rectangle.Double door2 = new Rectangle.Double(xLength * 0.5, yLength * 0.85, xLength * 0.15, yLength *0.12);
+        Rectangle.Double door1 = new Rectangle.Double(xPos + (xLen * 0.35), yPos + (yHei * 0.85), xLen * 0.3 , yHei *0.12);
+        Rectangle.Double door2 = new Rectangle.Double(xPos + (xLen * 0.5 ), yPos + (yHei * 0.85), xLen * 0.15, yHei *0.12);
         //steps
-        Rectangle.Double steps = new Rectangle.Double(xLength * 0.3, yLength * 0.97, xLength * 0.4, yLength * 0.1);
+        Rectangle.Double steps = new Rectangle.Double(xPos +(xLen * 0.3), yPos + (yHei * 0.97), xLen * 0.4, yHei * 0.1);
         
         
         //colour
